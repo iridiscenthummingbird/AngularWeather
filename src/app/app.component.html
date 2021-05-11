@@ -2,11 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link">Now</a></li>
-        <li class="nav-item"><a class="nav-link">Today</a></li>
-        <li class="nav-item"><a class="nav-link">3 Days</a></li>
-        <li class="nav-item"><a class="nav-link">Week</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/now" routerLinkActive="active">Now</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/today" routerLinkActive="active">Today</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/3days" routerLinkActive="active">3 Days</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="week" routerLinkActive="active">Week</a></li>
       </ul>
     </div>
   </div>
+  <router-outlet></router-outlet>
 </div>
+
