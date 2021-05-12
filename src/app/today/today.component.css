@@ -1,0 +1,88 @@
+.cont{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.upper-box{
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #c7dfff;
+  padding: 10px;
+  width: 250px;
+}
+.top-cont h2{
+  margin-left: 10px;
+}
+.main-img{
+  width: 70px;
+}
+.top-cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750px;
+}
+.colm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.colm p{
+  margin-bottom: 0;
+}
+.main-cont{
+  background-color: #c7dfff;
+  width: 750px;
+  border-radius: 0 30px 30px 30px;
+}
+.weather-cont{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.wind-cont{
+  margin-left: 15px;
+  /*margin-top: 10px;*/
+  font-size: 16px;
+}
+.weath-col{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.weath-col img{
+  width: 50px;
+}
+.wind-cols-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.weath-col div span{
+  font-size: 20px;
+}
+.weath-col span{
+  font-size: 24px;
+}
+.wind-cols-cont span{
+  font-size: 18px;
+  font-style: italic;
+  transform: skewX(-160deg);
+}
+.wind-cols-cont div{
+  transform: skewX(160deg);
+  display: flex;
+  justify-content: center;
+  height: 25px;
+  width: 50px;
+  background: linear-gradient(to right, #c7dfff 0%, #ebebeb 50%);
+}
+

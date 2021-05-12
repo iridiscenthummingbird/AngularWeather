@@ -1,0 +1,29 @@
+/*.container{*/
+/*  margin-top: 50px;*/
+/*  border: 1px solid black;*/
+/*  width: 850px;*/
+/*  border-radius: 30px;*/
+/*}*/
+/*.row.justify-content-between.align-items-center{*/
+/*  margin: 10px;*/
+/*}*/
+.cont{
+  display: flex;
+  justify-content: center;
+}
+.myCard{
+  margin-top: 50px;
+  width: 850px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #c7dfff;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.column p{
+  margin-bottom: 0;
+}
