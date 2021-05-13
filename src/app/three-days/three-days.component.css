@@ -1,0 +1,88 @@
+.cont{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.all-cont{
+  width: 900px;
+}
+h1{
+  margin-left: 10px;
+  align-self: baseline;
+  font-size: 28px;
+}
+.main-cont{
+  background-color: #c7dfff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.dates-cont{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+.date-cont{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+.date-cont span{
+  font-size: 22px;
+}
+.weath-cols{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.weath-col img{
+  width: 30px;
+}
+.weath-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.weath-col:nth-child(4n){
+  margin-right: 20px;
+}
+.part-of-day{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.temp{
+  margin-top: 10px;
+  font-size: 22px;
+}
+.wind-cont{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 16px;
+}
+.wind-cols-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.wind-cols-cont span{
+  font-size: 18px;
+  font-style: italic;
+  transform: skewX(-160deg);
+}
+.wind-cols-cont div{
+  transform: skewX(160deg);
+  display: flex;
+  justify-content: center;
+  height: 25px;
+  width: 50px;
+  background: linear-gradient(to right, #c7dfff 0%, #ebebeb 50%);
+}
+.wind-cols-cont div:nth-child(4n) {
+  margin-right: 20px;
+}
