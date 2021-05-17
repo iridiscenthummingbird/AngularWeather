@@ -6,7 +6,8 @@ import {NowComponent} from './now/now.component';
 import {TodayComponent} from './today/today.component';
 import {ThreeDaysComponent} from './three-days/three-days.component';
 import {WeekComponent} from './week/week.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import {DataService} from './data.service';
 
 const routes: Routes = [
   {path: 'now', component: NowComponent},
@@ -22,13 +23,14 @@ const routes: Routes = [
     NowComponent,
     TodayComponent,
     ThreeDaysComponent,
-    WeekComponent
+    WeekComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -9,43 +9,43 @@
           <span class="day">Mon</span>
           <span class="num">05</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150875.png" alt="">
-          <span class="temp">+12</span>
+          <span class="temp">{{this.data.daily[0].temp.day < 0 ? '' : '+'}}{{this.data.daily[0].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Tue</span>
           <span class="num">06</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150891.png" alt="">
-          <span class="temp">+14</span>
+          <span class="temp">{{this.data.daily[1].temp.day < 0 ? '' : '+'}}{{this.data.daily[1].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Wed</span>
           <span class="num">07</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150956.png" alt="">
-          <span class="temp">+14</span>
+          <span class="temp">{{this.data.daily[2].temp.day < 0 ? '' : '+'}}{{this.data.daily[2].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Thu</span>
           <span class="num">08</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150904.png" alt="">
-          <span class="temp">+14</span>
+          <span class="temp">{{this.data.daily[3].temp.day < 0 ? '' : '+'}}{{this.data.daily[3].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Fri</span>
           <span class="num">09</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150884.png" alt="">
-          <span class="temp">+13</span>
+          <span class="temp">{{this.data.daily[4].temp.day < 0 ? '' : '+'}}{{this.data.daily[4].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Sat</span>
           <span class="num">10</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150875.png" alt="">
-          <span class="temp">+12</span>
+          <span class="temp">{{this.data.daily[5].temp.day < 0 ? '' : '+'}}{{this.data.daily[5].temp.day | number: '1.0-0'}}</span>
         </div>
         <div class="day-cont">
           <span class="day">Sun</span>
           <span class="num">11</span>
           <img src="https://image.flaticon.com/icons/png/128/4150/4150897.png" alt="">
-          <span class="temp">+10</span>
+          <span class="temp">{{this.data.daily[6].temp.day < 0 ? '' : '+'}}{{this.data.daily[6].temp.day | number: '1.0-0'}}</span>
         </div>
       </div>
       <div class="wind-cont">

@@ -17,9 +17,9 @@
   <div class="myCard">
     <div class="column">
       <p style="font-size: 30px">Sint-Katelijne-Waver, Belgium</p>
-      <p style="font-size: 76px">15°C</p>
-      <p style="font-size: 24px">feels like 12°C</p>
-      <p style="font-size: 24px">Rain</p>
+      <p style="font-size: 76px">{{this.data.current.temp < 0 ? '' : '+'}}{{this.data.current.temp | number: '1.0-0'}}°C</p>
+      <p style="font-size: 24px">feels like {{this.data.current.feels_like < 0 ? '' : '+'}}{{this.data.current.feels_like| number: '1.0-0'}}°C</p>
+      <p style="font-size: 24px">{{this.data.current.weather[0].main}}</p>
     </div>
     <div>
       <img
