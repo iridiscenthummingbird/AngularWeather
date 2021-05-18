@@ -7,6 +7,14 @@ export class DataService {
 
   private data: any;
 
+  lat: any;
+
+  lon: any;
+
+  city: any;
+
+  country: any;
+
   getData(): any{
     return this.data;
   }

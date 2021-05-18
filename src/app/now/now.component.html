@@ -1,22 +1,7 @@
-<!--<div class="container">-->
-<!--  <div class="row justify-content-between align-items-center">-->
-<!--    <div class="col-6">-->
-<!--      <div class="row" style="font-size: 30px">Sint-Katelijne-Waver, Belgium</div>-->
-<!--      <div class="row" style="font-size: 76px">15°C</div>-->
-<!--      <div class="row" style="font-size: 24px">feels like 12°C</div>-->
-<!--      <div class="row" style="font-size: 24px">Rain</div>-->
-<!--    </div>-->
-<!--    <div class="col-6">-->
-<!--      <img-->
-<!--        src="https://www.flaticon.com/svg/vstatic/svg/4150/4150884.svg?token=exp=1620841860~hmac=c78195cbb149b7acd563cb8112b2a836"-->
-<!--        class="img-fluid" alt="cloud" width="300px">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <div class="cont">
   <div class="myCard">
     <div class="column">
-      <p style="font-size: 30px">Sint-Katelijne-Waver, Belgium</p>
+      <p style="font-size: 30px">{{city}}, {{country}}</p>
       <p style="font-size: 76px">{{this.data.current.temp < 0 ? '' : '+'}}{{this.data.current.temp | number: '1.0-0'}}°C</p>
       <p style="font-size: 24px">feels like {{this.data.current.feels_like < 0 ? '' : '+'}}{{this.data.current.feels_like| number: '1.0-0'}}°C</p>
       <p style="font-size: 24px">{{this.data.current.weather[0].main}}</p>

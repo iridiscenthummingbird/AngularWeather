@@ -1,15 +1,31 @@
 <div class="container-lg">
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-tabs">
-        <a class="navbar-brand">Weather</a>
+  <nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Weather</a>
+      <ul class="nav nav-tabs me-auto">
         <li class="nav-item"><a class="nav-link" routerLink="/now" routerLinkActive="active">Now</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/today" routerLinkActive="active">Today</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/3days" routerLinkActive="active">3 Days</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="week" routerLinkActive="active">Week</a></li>
       </ul>
+      <div class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="city" (input)="search()">
+        <div class="state-container-dropdown" *ngIf="showDropDown" (click)="chooseCity()">
+          <div class="coln">
+            <div class="city">
+              {{response.name}}, {{response.sys.country}}
+            </div>
+            <div class="temp">
+              {{response.main.temp < 0 ? '' : '+'}}{{response.main.temp | number: '1.0-0'}}°C
+            </div>
+          </div>
+          <div class="coln">
+            <img src="./assets/{{response.weather[0].icon}}.png" alt="">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
   <router-outlet></router-outlet>
 </div>
 

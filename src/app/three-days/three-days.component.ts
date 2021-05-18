@@ -15,6 +15,8 @@ export class ThreeDaysComponent implements OnInit {
 
   public data: any;
 
+  city: any;
+
   public setBgColor(num: number): string {
     if (num < 4.9) {
       return 'none';
@@ -46,6 +48,7 @@ export class ThreeDaysComponent implements OnInit {
       this.search();
     } else {
       this.data = this.dataService.getData();
+      this.city = this.dataService.city;
     }
     for (let i = 0; i < 3; i++){
       const tmp = new Date();

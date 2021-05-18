@@ -12,6 +12,10 @@ export class NowComponent implements OnInit {
 
   public response: any;
 
+  city: any;
+
+  country: any;
+
   public data: any;
 
   public search() {
@@ -29,6 +33,8 @@ export class NowComponent implements OnInit {
       this.search();
     } else {
       this.data = this.dataService.getData();
+      this.city = this.dataService.city;
+      this.country = this.dataService.country;
     }
   }
 

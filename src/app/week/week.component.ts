@@ -14,6 +14,8 @@ export class WeekComponent implements OnInit {
 
   public days: Date[] = [];
 
+  city: any;
+
   public setBgColor(num: number): string {
     if (num < 4.9) {
       return 'none';
@@ -22,7 +24,6 @@ export class WeekComponent implements OnInit {
       return 'linear-gradient(to right, #c7dfff 0%, #ebebeb 50%)';
     }
     else if (num < 14.9) {
-      console.log(num);
       return 'linear-gradient(to right, #c7dfff 0%, #ffdd7d 50%)';
     }
     else {
@@ -45,6 +46,7 @@ export class WeekComponent implements OnInit {
       this.search();
     } else {
       this.data = this.dataService.getData();
+      this.city = this.dataService.city;
     }
     for (let i = 0; i < 7; i++){
       const tmp = new Date();

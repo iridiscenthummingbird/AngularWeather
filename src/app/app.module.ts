@@ -8,6 +8,7 @@ import {ThreeDaysComponent} from './three-days/three-days.component';
 import {WeekComponent} from './week/week.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DataService} from './data.service';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: 'now', component: NowComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
