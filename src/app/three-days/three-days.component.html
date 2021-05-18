@@ -6,13 +6,13 @@
     <div class="main-cont">
       <div class="dates-cont">
         <div class="date-cont">
-          <span>Mon, 05</span>
+          <span>{{days[0] | date: 'EEE, dd'}}</span>
         </div>
         <div class="date-cont">
-          <span>Tue, 06</span>
+          <span>{{days[1] | date: 'EEE, dd'}}</span>
         </div>
         <div class="date-cont">
-          <span>Wed, 07</span>
+          <span>{{days[2] | date: 'EEE, dd'}}</span>
         </div>
       </div>
       <div class="weath-cols">
@@ -129,18 +129,9 @@
         <span>Wind speed, m/s</span>
       </div>
       <div class="wind-cols-cont">
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
-        <div><span>2</span></div>
+        <div [style.background]="setBgColor(this.data.daily[0].wind_speed)"><span>{{this.data.daily[0].wind_speed | number: '1.0-1'}}</span></div>
+        <div [style.background]="setBgColor(this.data.daily[1].wind_speed)"><span>{{this.data.daily[1].wind_speed | number: '1.0-1'}}</span></div>
+        <div [style.background]="setBgColor(this.data.daily[2].wind_speed)"><span>{{this.data.daily[2].wind_speed | number: '1.0-1'}}</span></div>
       </div>
     </div>
   </div>

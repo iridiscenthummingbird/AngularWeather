@@ -80,7 +80,7 @@ h1{
   display: flex;
   justify-content: center;
   height: 25px;
-  width: 50px;
+  width: 100px;
   background: linear-gradient(to right, #c7dfff 0%, #ebebeb 50%);
 }
 .wind-cols-cont div:nth-child(4n) {
