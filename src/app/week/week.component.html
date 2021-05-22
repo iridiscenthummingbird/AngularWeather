@@ -5,60 +5,21 @@
     </h1>
     <div class="main-cont">
       <div class="days-cont">
-        <div class="day-cont">
-          <span class="day">{{days[0] | date: 'EEE'}}</span>
-          <span class="num">{{days[0] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[0].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[0].temp.day < 0 ? '' : '+'}}{{this.data.daily[0].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[1] | date: 'EEE'}}</span>
-          <span class="num">{{days[1] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[1].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[1].temp.day < 0 ? '' : '+'}}{{this.data.daily[1].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[2] | date: 'EEE'}}</span>
-          <span class="num">{{days[2] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[2].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[2].temp.day < 0 ? '' : '+'}}{{this.data.daily[2].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[3] | date: 'EEE'}}</span>
-          <span class="num">{{days[3] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[3].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[3].temp.day < 0 ? '' : '+'}}{{this.data.daily[3].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[4] | date: 'EEE'}}</span>
-          <span class="num">{{days[4] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[4].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[4].temp.day < 0 ? '' : '+'}}{{this.data.daily[4].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[5] | date: 'EEE'}}</span>
-          <span class="num">{{days[5] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[5].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[5].temp.day < 0 ? '' : '+'}}{{this.data.daily[5].temp.day | number: '1.0-0'}}</span>
-        </div>
-        <div class="day-cont">
-          <span class="day">{{days[6] | date: 'EEE'}}</span>
-          <span class="num">{{days[6] | date: 'dd'}}</span>
-          <img src="../assets/{{this.data.daily[6].weather[0].icon}}.png" alt="">
-          <span class="temp">{{this.data.daily[6].temp.day < 0 ? '' : '+'}}{{this.data.daily[6].temp.day | number: '1.0-0'}}</span>
+        <div class="day-cont" *ngFor="let day of days; let i = index">
+          <span class="day">{{day | date: 'EEE'}}</span>
+          <span class="num">{{day | date: 'dd'}}</span>
+          <img src="../assets/{{daysData[i].weather[0].icon}}.png" alt="{{daysData[i].weather[0].description}}">
+          <span class="temp">{{daysData[i].temp.day < 0 ? '' : '+'}}{{daysData[i].temp.day | number: '1.0-0'}}</span>
         </div>
       </div>
       <div class="wind-cont">
         <span>Wind speed, m/s</span>
       </div>
       <div class="wind-cols-cont">
-        <div [style.background]="setBgColor(this.data.daily[0].wind_speed)"><span>{{this.data.daily[0].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[1].wind_speed)"><span>{{this.data.daily[1].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[2].wind_speed)"><span>{{this.data.daily[2].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[3].wind_speed)"><span>{{this.data.daily[3].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[4].wind_speed)"><span>{{this.data.daily[4].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[5].wind_speed)"><span>{{this.data.daily[5].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[6].wind_speed)"><span>{{this.data.daily[6].wind_speed | number: '1.0-1'}}</span></div>
+        <div *ngFor="let dayData of daysData; let i = index"
+             [style.background]="setBgColor(dayData.wind_speed)">
+          <span>{{dayData.wind_speed | number: '1.0-1'}}</span>
+        </div>
       </div>
     </div>
   </div>

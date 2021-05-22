@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DataService} from './data.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'weather';
 
   public response: any;
@@ -16,20 +17,33 @@ export class AppComponent implements OnInit{
 
   showDropDown: boolean;
 
+  private routedComponent: any;
+
+  public setRoutedComponent(componentRef: any) {
+    this.routedComponent = componentRef;
+  }
+
   public search() {
-      this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&appid=4be025c02da187c41c9e315a456e1bb6&units=metric')
-        .subscribe((response) => {
+    this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&appid=4be025c02da187c41c9e315a456e1bb6&units=metric')
+      .subscribe((response) => {
           this.response = response;
-          console.log(this.response);
-          if (this.response.cod === 200){
+          if (this.response.cod === 200) {
             this.showDropDown = true;
           }
         },
-          (error => {
-            this.showDropDown = false;
-          }));
+        (error => {
+          this.showDropDown = false;
+        }));
   }
-  chooseCity(){
+
+  refreshComponent() {
+    this.routedComponent.refresh();
+    // this.router.navigate(['/today']);
+    // this.router.navigate(['/now']);
+    //this.router.navigate([this.router.url]);
+  }
+
+  chooseCity() {
     this.showDropDown = false;
     this.city = '';
     this.dataService.lat = this.response.coord.lat;
@@ -39,13 +53,12 @@ export class AppComponent implements OnInit{
     this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
         const tmp = response;
-        console.log(this.dataService.getData());
         this.dataService.setData(tmp);
-        console.log(this.dataService.getData());
+        this.refreshComponent();
       });
   }
 
-  constructor(private http: HttpClient, private dataService: DataService) {
+  constructor(private http: HttpClient, private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.showDropDown = false;
   }
 

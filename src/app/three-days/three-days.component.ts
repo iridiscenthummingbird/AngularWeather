@@ -25,7 +25,6 @@ export class ThreeDaysComponent implements OnInit {
       return 'linear-gradient(to right, #c7dfff 0%, #ebebeb 50%)';
     }
     else if (num < 14.9) {
-      console.log(num);
       return 'linear-gradient(to right, #c7dfff 0%, #ffdd7d 50%)';
     }
     else {
@@ -34,7 +33,7 @@ export class ThreeDaysComponent implements OnInit {
   }
 
   public search() {
-    this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=4.5333&lat=51.0667&units=metric')
+    this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
         this.response = response;
         this.dataService.setData(this.response);
@@ -46,6 +45,8 @@ export class ThreeDaysComponent implements OnInit {
     if (this.dataService.getData() == null)
     {
       this.search();
+
+      this.city = this.dataService.city;
     } else {
       this.data = this.dataService.getData();
       this.city = this.dataService.city;
@@ -60,4 +61,13 @@ export class ThreeDaysComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public refresh(){
+    if (this.dataService.getData() == null)
+    {
+      this.search();
+    } else {
+      this.data = this.dataService.getData();
+      this.city = this.dataService.city;
+    }
+  }
 }

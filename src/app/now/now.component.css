@@ -18,3 +18,8 @@
 .column p{
   margin-bottom: 0;
 }
+img{
+  width: 250px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}

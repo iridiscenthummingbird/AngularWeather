@@ -9,7 +9,8 @@
     <div>
       <img
         src="../assets/{{this.data.current.weather[0].icon}}.png"
-        alt="cloud" width="300px">
+        alt="{{this.data.current.weather[0].main}}"
+        data-toggle="tooltip" data-placement="bottom" title="{{this.data.current.weather[0].main}}">
     </div>
   </div>
 </div>
