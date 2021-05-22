@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {DataService} from './data.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
-
+import { getName } from 'country-list';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     this.cookie.set('lon', this.dataService.lon);
     this.dataService.city = this.response.name;
     this.cookie.set('city', this.dataService.city);
-    this.dataService.country = this.response.sys.country;
+    this.dataService.country = getName(this.response.sys.country);
     this.cookie.set('country', this.dataService.country);
     this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
