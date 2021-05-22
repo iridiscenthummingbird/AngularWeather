@@ -9,6 +9,7 @@ import {WeekComponent} from './week/week.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DataService} from './data.service';
 import {FormsModule} from '@angular/forms';
+import {CookieService} from 'ngx-cookie-service';
 
 const routes: Routes = [
   {path: 'now', component: NowComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

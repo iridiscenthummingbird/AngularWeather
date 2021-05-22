@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,16 @@ export class DataService {
     this.data = data;
   }
 
-  constructor() { }
+  constructor(private cookie: CookieService) {
+    const lat = this.cookie.get('lat');
+    const lon = this.cookie.get('lon');
+    const city = this.cookie.get('city');
+    const country = this.cookie.get('country');
+    if (lat !== '' && lon !== '' && city !== '' && country !== ''){
+      this.lat = lat;
+      this.lon = lon;
+      this.city = city;
+      this.country = country;
+    }
+  }
 }
