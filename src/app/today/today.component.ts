@@ -10,9 +10,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class TodayComponent implements OnInit {
 
-  public response: any;
+  response: any;
 
-  public data: any;
+  data: any;
 
   city: any;
 
@@ -22,7 +22,7 @@ export class TodayComponent implements OnInit {
 
   day: Date = new Date();
 
-  public setBgColor(num: number): string {
+  setBgColor(num: number): string {
     if (num < 4.9) {
       return 'none';
     } else if (num < 9.9) {
@@ -34,7 +34,7 @@ export class TodayComponent implements OnInit {
     }
   }
 
-  public getData() {
+  getData() {
     this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
         this.response = response;
@@ -45,12 +45,12 @@ export class TodayComponent implements OnInit {
   }
 
   constructor(private http: HttpClient, private dataService: DataService) {
-    this.city = this.dataService.city;
-    this.country = this.dataService.country;
     if (this.dataService.getData() == null)
     {
       this.getData();
     } else {
+      this.city = this.dataService.city;
+      this.country = this.dataService.country;
       this.data = this.dataService.getData();
       let counter = -24;
       let checkCounter = 0;
@@ -72,7 +72,7 @@ export class TodayComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public refresh() {
+  refresh() {
     this.data = this.dataService.getData();
     let counter = -24;
     let checkCounter = 0;

@@ -1,10 +1,31 @@
+@media (min-width: 900px){
+  .column{
+    font-size: 30px;
+  }
+}
+@media (min-width: 650px) and (max-width: 899px){
+  .column{
+    font-size: 25px;
+  }
+}
+@media (min-width: 430px) and (max-width: 649px){
+  .column{
+    font-size: 20px;
+  }
+}
+@media (max-width: 429px){
+  .column{
+    font-size: 16px;
+  }
+}
 .cont{
   display: flex;
   justify-content: center;
 }
 .myCard{
   margin-top: 50px;
-  width: 850px;
+  width: 90%;
+  max-width: 850px;
   border-radius: 30px;
   display: flex;
   justify-content: space-around;
@@ -19,7 +40,8 @@
   margin-bottom: 0;
 }
 img{
-  width: 250px;
+  width: 25vw;
+  max-width: 250px;
   margin-top: 25px;
   margin-bottom: 25px;
 }

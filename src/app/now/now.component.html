@@ -1,10 +1,10 @@
 <div class="cont">
   <div class="myCard">
     <div class="column">
-      <p style="font-size: 30px">{{city}}, {{country}}</p>
-      <p style="font-size: 76px">{{this.data.current.temp < 0 ? '' : '+'}}{{this.data.current.temp | number: '1.0-0'}}°C</p>
-      <p style="font-size: 24px">feels like {{this.data.current.feels_like < 0 ? '' : '+'}}{{this.data.current.feels_like| number: '1.0-0'}}°C</p>
-      <p style="font-size: 24px">{{this.data.current.weather[0].main}}</p>
+      <p style="font-size: 1em">{{city}}, {{country}}</p>
+      <p style="font-size: 2.50em">{{this.data.current.temp < 0 ? '' : '+'}}{{this.data.current.temp | number: '1.0-0'}}°C</p>
+      <p style="font-size: 0.8em">feels like {{this.data.current.feels_like < 0 ? '' : '+'}}{{this.data.current.feels_like| number: '1.0-0'}}°C</p>
+      <p style="font-size: 0.8em">{{this.data.current.weather[0].main}}</p>
     </div>
     <div>
       <img

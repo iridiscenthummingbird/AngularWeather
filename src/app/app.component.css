@@ -9,15 +9,34 @@
   border: none;
   font-size: 20px;
 }
+.navbar-toggler{
+  border-radius: 10px;
+  background-color: white;
+}
+.navbar-toggler > div{
+  width: 25px;
+  height: 3px;
+  background-color: gray;
+  margin: 5px 0 5px 0;
+  border-radius: 5px;
+}
+.navbar-toggler > div:last-child{
+  margin-bottom: 2px;
+}
+.navbar-toggler > div:first-child{
+  margin-top: 2px;
+}
 .navbar{
   background-color: #c7dfff;
   border-radius: 0 0 10px 10px;
 }
 .navbar-brand{
   font-size: 28px;
+  color: black;
 }
 .form-control{
   border-radius: 10px;
+  margin: 5px 0 0 0;
 }
 .state-container-dropdown{
   border: lightgrey 1px solid;

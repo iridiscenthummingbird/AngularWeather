@@ -1,3 +1,23 @@
+@media (min-width: 900px){
+  .cont{
+    font-size: 32px;
+  }
+}
+@media (min-width: 650px) and (max-width: 899px){
+  .cont{
+    font-size: 25px;
+  }
+}
+@media (min-width: 430px) and (max-width: 649px){
+  .cont{
+    font-size: 20px;
+  }
+}
+@media (max-width: 429px){
+  .cont{
+    font-size: 16px;
+  }
+}
 .cont{
   margin-top: 50px;
   display: flex;
@@ -5,12 +25,13 @@
   flex-direction: column;
 }
 .all-cont{
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
 }
 h1{
   margin-left: 10px;
   align-self: baseline;
-  font-size: 28px;
+  font-size: 0.875em;
 }
 .main-cont{
   background-color: #c7dfff;
@@ -30,22 +51,22 @@ h1{
   align-items: center;
 }
 .day-cont img{
-  width: 50px;
+  width: 1.56em;
 }
 .day{
-  font-size: 18px;
+  font-size: 0.56em;
 }
 .num{
   margin-bottom: 15px;
 }
 .temp{
-  font-size: 24px;
+  font-size: 0.75em;
   margin-top: 10px;
 }
 .wind-cont{
   margin-top: 10px;
   margin-left: 15px;
-  font-size: 16px;
+  font-size: 0.5em;
 }
 .wind-cols-cont{
   display: flex;
@@ -55,7 +76,7 @@ h1{
   margin-bottom: 10px;
 }
 .wind-cols-cont span{
-  font-size: 18px;
+  font-size: 0.56em;
   font-style: italic;
   transform: skewX(-160deg);
 }
@@ -63,6 +84,6 @@ h1{
   transform: skewX(160deg);
   display: flex;
   justify-content: center;
-  height: 25px;
-  width: 50px;
+  height: 0.78em;
+  width: 1.56em;
 }

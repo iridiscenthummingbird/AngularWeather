@@ -10,21 +10,22 @@ import {DataService} from '../data.service';
 })
 export class NowComponent implements OnInit {
 
-  public response: any;
+  response: any;
 
   city: any;
 
   country: any;
 
-  public data: any;
+  data: any;
 
 
-  public getData() {
+  getData() {
     this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
         this.response = response;
         this.dataService.setData(this.response);
         this.data = this.response;
+        this.refresh();
       });
   }
 
@@ -33,15 +34,15 @@ export class NowComponent implements OnInit {
       this.getData();
     } else {
       this.data = this.dataService.getData();
+      this.city = this.dataService.city;
+      this.country = this.dataService.country;
     }
-    this.city = this.dataService.city;
-    this.country = this.dataService.country;
   }
 
   ngOnInit(): void {
   }
 
-  public refresh() {
+  refresh() {
     this.data = this.dataService.getData();
     this.city = this.dataService.city;
     this.country = this.dataService.country;

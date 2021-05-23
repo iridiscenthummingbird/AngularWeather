@@ -16,122 +16,53 @@
         </div>
       </div>
       <div class="weath-cols">
-        <div class="weath-col">
+        <div class="weath-day" *ngFor="let day of daysData">
+          <div class="weath-col">
           <span class="part-of-day">
             Night
           </span>
-          <img src="../assets/{{this.data.daily[0].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[0].temp.night < 0 ? '' : '+'}}{{this.data.daily[0].temp.night | number: '1.0-0'}}
+            <img src="../assets/{{day.weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
+            <span class="temp">
+            {{day.temp.night < 0 ? '' : '+'}}{{day.temp.night | number: '1.0-0'}}
           </span>
-        </div>
-        <div class="weath-col">
+          </div>
+          <div class="weath-col">
           <span class="part-of-day">
             Morning
           </span>
-          <img src="../assets/{{this.data.daily[0].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[0].temp.morn < 0 ? '' : '+'}}{{this.data.daily[0].temp.morn | number: '1.0-0'}}
+            <img src="../assets/{{day.weather[0].icon}}.png" alt="">
+            <span class="temp">
+            {{day.temp.morn < 0 ? '' : '+'}}{{day.temp.morn | number: '1.0-0'}}
           </span>
-        </div>
-        <div class="weath-col">
+          </div>
+          <div class="weath-col">
           <span class="part-of-day">
             Day
           </span>
-          <img src="../assets/{{this.data.daily[0].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[0].temp.day < 0 ? '' : '+'}}{{this.data.daily[0].temp.day | number: '1.0-0'}}
+            <img src="../assets/{{day.weather[0].icon}}.png" alt="">
+            <span class="temp">
+            {{day.temp.day < 0 ? '' : '+'}}{{day.temp.day | number: '1.0-0'}}
           </span>
-        </div>
-        <div class="weath-col">
+          </div>
+          <div class="weath-col">
           <span class="part-of-day">
             Evening
           </span>
-          <img src="../assets/{{this.data.daily[0].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[0].temp.eve < 0 ? '' : '+'}}{{this.data.daily[0].temp.eve | number: '1.0-0'}}
+            <img src="../assets/{{day.weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
+            <span class="temp">
+            {{day.temp.eve < 0 ? '' : '+'}}{{day.temp.eve | number: '1.0-0'}}
           </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Night
-          </span>
-          <img src="../assets/{{this.data.daily[1].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[1].temp.night < 0 ? '' : '+'}}{{this.data.daily[1].temp.night | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Morning
-          </span>
-          <img src="../assets/{{this.data.daily[1].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[1].temp.morn < 0 ? '' : '+'}}{{this.data.daily[1].temp.morn | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Day
-          </span>
-          <img src="../assets/{{this.data.daily[1].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[1].temp.day < 0 ? '' : '+'}}{{this.data.daily[1].temp.day | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Evening
-          </span>
-          <img src="../assets/{{this.data.daily[1].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[1].temp.eve < 0 ? '' : '+'}}{{this.data.daily[1].temp.eve | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Night
-          </span>
-          <img src="../assets/{{this.data.daily[2].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[2].temp.night < 0 ? '' : '+'}}{{this.data.daily[2].temp.night | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Morning
-          </span>
-          <img src="../assets/{{this.data.daily[2].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[2].temp.morn < 0 ? '' : '+'}}{{this.data.daily[2].temp.morn | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Day
-          </span>
-          <img src="../assets/{{this.data.daily[2].weather[0].icon}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[2].temp.day < 0 ? '' : '+'}}{{this.data.daily[2].temp.day | number: '1.0-0'}}
-          </span>
-        </div>
-        <div class="weath-col">
-          <span class="part-of-day">
-            Evening
-          </span>
-          <img src="../assets/{{this.data.daily[2].weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
-          <span class="temp">
-            {{this.data.daily[2].temp.eve < 0 ? '' : '+'}}{{this.data.daily[2].temp.eve | number: '1.0-0'}}
-          </span>
+          </div>
         </div>
       </div>
       <div class="wind-cont">
         <span>Wind speed, m/s</span>
       </div>
       <div class="wind-cols-cont">
-        <div [style.background]="setBgColor(this.data.daily[0].wind_speed)"><span>{{this.data.daily[0].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[1].wind_speed)"><span>{{this.data.daily[1].wind_speed | number: '1.0-1'}}</span></div>
-        <div [style.background]="setBgColor(this.data.daily[2].wind_speed)"><span>{{this.data.daily[2].wind_speed | number: '1.0-1'}}</span></div>
+        <div *ngFor="let day of daysData"
+             [style.background]="setBgColor(day.wind_speed)">
+          <span>{{day.wind_speed | number: '1.0-1'}}</span>
+        </div>
       </div>
     </div>
   </div>

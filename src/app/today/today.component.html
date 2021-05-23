@@ -1,26 +1,27 @@
 <div class="cont">
+  <div>
   <div class="top-cont">
     <div class="upper-box">
       <div class="colm">
-        <p style="font-size: 32px">{{day | date: 'EEE'}}, {{day | date: 'dd'}}</p>
-        <p style="font-size: 20px">Min: {{data.daily[1].temp.min < 0 ? '' : '+'}}{{data.daily[1].temp.min | number: '1.0-0'}}°C
-          <br>Max: {{data.daily[1].temp.max < 0 ? '' : '+'}}{{data.daily[1].temp.max | number: '1.0-0'}}°C</p>
+        <p style="font-size: 1em">{{day | date: 'EEE'}}, {{day | date: 'dd'}}</p>
+        <p style="font-size: 0.625em">Min: {{data.daily[0].temp.min < 0 ? '' : '+'}}{{data.daily[0].temp.min | number: '1.0-0'}}°C
+          <br>Max: {{data.daily[0].temp.max < 0 ? '' : '+'}}{{data.daily[0].temp.max | number: '1.0-0'}}°C</p>
       </div>
       <img class="main-img"
            src="../assets/{{data.daily[1].weather[0].icon}}.png"
            alt="{{data.daily[1].weather[0].description}}">
     </div>
-    <h2 style="font-size: 30px">Weather in {{city}}, <br/>{{country}}</h2>
+    <h2 style="font-size: 0.9em">Weather in {{city}}, <br/>{{country}}</h2>
   </div>
   <div class="main-cont">
     <div class="weather-cont">
       <div class="weath-col" *ngFor="let hourData of weatherData; let i = index">
         <div>
           <span>{{2 + (i * 3)}}</span>
-          <sup>00</sup>
+          <sup style="font-size: 0.38em">00</sup>
         </div>
         <img src="../assets/{{weatherData[i].weather[0].icon}}.png" alt="{{weatherData[i].weather[0].description}}">
-        <span>{{weatherData[i].temp < 0 ? '' : '+'}}{{weatherData[i].temp | number: '1.0-0'}}</span>
+        <span style="font-size: 0.75em">{{weatherData[i].temp < 0 ? '' : '+'}}{{weatherData[i].temp | number: '1.0-0'}}</span>
       </div>
     </div>
     <div class="wind-cont">
@@ -32,5 +33,6 @@
         <span>{{hourData.wind_speed | number: '1.0-1'}}</span>
       </div>
     </div>
+  </div>
   </div>
 </div>

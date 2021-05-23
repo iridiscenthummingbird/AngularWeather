@@ -12,19 +12,19 @@ import { getName } from 'country-list';
 export class AppComponent implements OnInit {
   title = 'weather';
 
-  public response: any;
+  response: any;
 
-  public city: any;
+  city: any;
 
   showDropDown: boolean;
 
-  private routedComponent: any;
+  routedComponent: any;
 
-  public setRoutedComponent(componentRef: any) {
+  setRoutedComponent(componentRef: any) {
     this.routedComponent = componentRef;
   }
 
-  public search() {
+  search() {
     this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&appid=4be025c02da187c41c9e315a456e1bb6&units=metric')
       .subscribe((response) => {
           this.response = response;
@@ -60,7 +60,9 @@ export class AppComponent implements OnInit {
       });
   }
 
-  constructor(private http: HttpClient, private dataService: DataService, private router: Router, private activatedRoute: ActivatedRoute, private cookie: CookieService) {
+  constructor(private http: HttpClient, private dataService: DataService,
+              private router: Router, private activatedRoute: ActivatedRoute,
+              private cookie: CookieService) {
     this.showDropDown = false;
   }
 

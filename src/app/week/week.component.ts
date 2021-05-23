@@ -8,17 +8,17 @@ import {DataService} from '../data.service';
   styleUrls: ['./week.component.css']
 })
 export class WeekComponent implements OnInit {
-  public response: any;
+  response: any;
 
-  public data: any;
+  data: any;
 
-  public days: Date[] = [];
+  days: Date[] = [];
 
   daysData: any[] = [];
 
   city: any;
 
-  public setBgColor(num: number): string {
+  setBgColor(num: number): string {
     if (num < 4.9) {
       return 'none';
     } else if (num < 9.9) {
@@ -30,7 +30,7 @@ export class WeekComponent implements OnInit {
     }
   }
 
-  public getData() {
+  getData() {
     this.http.get('http://api.openweathermap.org/data/2.5/onecall?appid=4be025c02da187c41c9e315a456e1bb6&lon=' + this.dataService.lon + '&lat=' + this.dataService.lat + '&units=metric')
       .subscribe((response) => {
         this.response = response;
@@ -45,21 +45,20 @@ export class WeekComponent implements OnInit {
       this.getData();
     } else {
       this.data = this.dataService.getData();
-    }
-    this.city = this.dataService.city;
-
-    for (let i = 0; i < 7; i++) {
-      const tmp = new Date();
-      tmp.setDate(new Date().getDate() + i);
-      this.days.push(tmp);
-      this.daysData[i] = this.data.daily[i];
+      this.city = this.dataService.city;
+      for (let i = 0; i < 7; i++) {
+        const tmp = new Date();
+        tmp.setDate(new Date().getDate() + i);
+        this.days.push(tmp);
+        this.daysData[i] = this.data.daily[i];
+      }
     }
   }
 
   ngOnInit(): void {
   }
 
-  public refresh() {
+  refresh() {
     this.data = this.dataService.getData();
     this.city = this.dataService.city;
     this.daysData = [];

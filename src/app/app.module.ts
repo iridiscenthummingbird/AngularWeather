@@ -30,13 +30,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    // RouterModule.forRoot([
-    //   {path: 'now', component: NowComponent},
-    //   {path: 'today', component: TodayComponent},
-    //   {path: '3days', component: ThreeDaysComponent},
-    //   {path: 'week', component: WeekComponent},
-    //   {path: '', redirectTo: 'now', pathMatch: 'full'}
-    // ], {onSameUrlNavigation: 'reload'}),
     HttpClientModule,
     FormsModule
   ],
