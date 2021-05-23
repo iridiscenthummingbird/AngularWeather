@@ -21,7 +21,7 @@
           <span class="part-of-day">
             Night
           </span>
-            <img src="../assets/{{day.weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
+            <img src="../assets/{{day.weather[0].icon | night}}.png" alt="">
             <span class="temp">
             {{day.temp.night < 0 ? '' : '+'}}{{day.temp.night | number: '1.0-0'}}
           </span>
@@ -48,7 +48,7 @@
           <span class="part-of-day">
             Evening
           </span>
-            <img src="../assets/{{day.weather[0].icon.slice(0, -1) + 'n'}}.png" alt="">
+            <img src="../assets/{{day.weather[0].icon | night}}.png" alt="">
             <span class="temp">
             {{day.temp.eve < 0 ? '' : '+'}}{{day.temp.eve | number: '1.0-0'}}
           </span>
